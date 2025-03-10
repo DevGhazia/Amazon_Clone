@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.login_link{
+    @apply 
+    text-linkBlue text-xs 
+    hover:underline hover:decoration-red-500 hover:text-red-500
+}
+
+.login_button{
+    @apply
+    h-8 w-full 
+    text-sm
+    rounded-2xl
+}
