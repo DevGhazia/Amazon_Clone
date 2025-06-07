@@ -2,10 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base{
+    h1{
+        @apply font-semibold text-[28px] leading-9
+    }
+    h2{
+        @apply font-semibold text-[21px] leading-7
+    }
+    h3{
+        @apply font-semibold text-lg
+    }
+    h4{
+        @apply font-semibold text-base
+    }
+}
+
 .login_link{
     @apply 
     text-linkBlue text-xs 
     hover:underline hover:decoration-red-500 hover:text-red-500
+}
+
+.footer_link{
+    @apply
+    text-white text-xs
+    hover:underline hover:decoration-white 
 }
 
 .login_button{
@@ -13,4 +34,35 @@
     h-8 w-full 
     text-sm
     rounded-2xl
+}
+
+.header_hover{
+    @apply
+    hover:outline hover:outline-white hover:outline-[1.5px]
+    cursor-pointer
+}
+
+.header_link{
+    @apply
+    flex flex-col
+    p-1
+}
+
+.header_link span:first-child{
+    @apply
+    text-xs
+}
+
+.header_link span:last-child{
+    @apply
+    text-sm
+    font-bold
+}
+
+.header_sublink{
+    @apply
+    header_hover
+    text-sm
+    font-semibold
+    px-3
 }

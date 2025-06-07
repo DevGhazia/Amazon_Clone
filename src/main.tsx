@@ -5,14 +5,14 @@ import App from './App.tsx'
 import { BrowserRouter as Router } from 'react-router'
 import { Provider } from 'react-redux'
 import {store} from "./store.ts"
+import ScrollToTheTop from './components/ScrollToTheTop.tsx'
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    {/* <Provider store={store}> */}
+    <Provider store={store}>
       <Router>
+        <ScrollToTheTop/>
         <App />
       </Router>
-    {/* </Provider> */}
-  </StrictMode>,
+    </Provider>
 )
 
