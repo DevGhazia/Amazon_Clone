@@ -4,7 +4,7 @@ import { fetchProductsByCategory } from "../thunks/productThunks";
 import { RootState} from "../store";
 import { useEffect } from "react"
 import { Link } from "react-router";
-import getCloudinaryUrl from "../utils/cloudinary";
+// import getCloudinaryUrl from "../utils/cloudinary";
 
 interface ProductCardProps{
     cardTitle: string;

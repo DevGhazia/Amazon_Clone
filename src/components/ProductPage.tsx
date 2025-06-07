@@ -7,7 +7,7 @@ import { KeyboardArrowDown } from "@mui/icons-material";
 import Review from "./Review";
 import { useNavigate, useParams } from "react-router";
 import { clearProduct } from "../reducers/productSlice";
-import getCloudinaryUrl from "../utils/cloudinary";
+// import getCloudinaryUrl from "../utils/cloudinary";
 import { AddToCart } from "../thunks/cartThunks";
 
 export const ProductPage = () => {
