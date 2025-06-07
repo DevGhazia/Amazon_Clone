@@ -13,6 +13,7 @@ import { ProductPage } from "./components/ProductPage"
 import SearchProductPage from "./components/SearchProductPage"
 import ProductCategoryPage from "./components/ProductCategoryPage"
 import DisplayCart from "./components/DisplayCart"
+import { Navigate } from "react-router"
 
 function App() {
   const dispatch = useDispatch<AppDispatch>()
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <Routes>
+      <Route path="/" element={<Navigate to="/auth/signin" replace />} />
       <Route path="/auth" element={<AuthLayout/>}>
         <Route path="signin" element={<SignIn/>}/>
         <Route path="signup" element={<SignUp/>}/>
