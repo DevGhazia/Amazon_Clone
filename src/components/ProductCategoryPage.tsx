@@ -80,7 +80,7 @@ const ProductCategoryPage = () => {
     const {total, items} = products;
 
     return (
-        <div className='flex flex-col min-h-screen items-center pb-6 gap-6'>
+        <div className='w-full max-w-[1500px] flex flex-col min-h-screen items-center pb-6 gap-6'>
             <div className='flex px-6 gap-6 w-full'>
 
                 <SortMenu

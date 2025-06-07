@@ -32,7 +32,7 @@ const Home = () => {
     }
 
     return (
-        <div className="bg-ultraLightGray w-full flex justify-center z-10">
+        <div className="w-full flex justify-center bg-ultraLightGray">
             <section className=" bg-ultraLightGray min-h-screen max-w-[1500px]">
                 <div className="relative text-black">
                     <div className="absolute h-full w-16 left-0 top-0 flex justify-center items-center cursor-pointer">

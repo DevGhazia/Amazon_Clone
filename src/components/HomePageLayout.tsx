@@ -9,7 +9,9 @@ const HomePageLayout = () => {
   return (
     <div className='min-w-[1032px] min-h-screen flex flex-col'>
         <Header username={displayName}/>
-        <Outlet/>
+        <div className='flex w-full justify-center z-50'>
+          <Outlet/>
+        </div>
         <Footer/>
     </div>
   )

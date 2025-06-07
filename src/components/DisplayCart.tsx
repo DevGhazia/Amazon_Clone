@@ -8,7 +8,7 @@ const DisplayCart = () => {
     const subtotal = items.reduce((sum, item) => {return sum + item.price * item.quantity;}, 0);
 
     return (
-        <div className="flex min-h-screen justify-center p-5 gap-5">
+        <div className="w-full flex min-h-screen justify-center p-5 gap-5">
             <div className="flex-grow p-4 max-w-[800px] h-fit border border-lightGray rounded-lg">
                 <span className="text-[28px] font-medium">Shopping Cart</span>
                 <div className="text-sm text-right">Price</div>

@@ -57,7 +57,7 @@ export const ProductPage = () => {
     }
 
     return (
-        <div className="px-6 text-sm">
+        <div className="px-6 text-sm max-w-[1500px]">
             <div className="flex gap-6 mb-5">
 
                 {/* SIDE IMAGES */}
