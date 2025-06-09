@@ -5,14 +5,14 @@ import { AppDispatch } from "../store";
 import { DeleteItemFromCart } from "../thunks/cartThunks";
 import UpdateQuantityButton from "./UpdateQuantityButton";
 
-const CartCart = ({item, index, loading}: {item: CartProduct, index: number, loading: boolean}) => {
+const CartCard = ({item, loading}: {item: CartProduct, loading: boolean}) => {
 
     const {name, price, imageSrc, quantity, id, delivery, brand} = item;
     const dispatch = useDispatch<AppDispatch>();
     const itemPageLink = name.split(" ").join("-").toLowerCase()+"/"+id;
     return (
         <>
-            <div className="flex py-2 pl-2 gap-4" key={index}>
+            <div className="flex py-2 pl-2 gap-4">
                 <Link to={itemPageLink}>
                     <img src={imageSrc} className="max-h-48 bg-ultraLightGrayMax" alt="" />
                 </Link>
@@ -69,4 +69,4 @@ const CartCart = ({item, index, loading}: {item: CartProduct, index: number, loa
     )
 }
 
-export default CartCart
+export default CartCard;

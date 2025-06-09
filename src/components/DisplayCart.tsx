@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux"
 import { RootState } from "../store"
-import CartCart from "./CartCart";
+import CartCard from "./CartCard";
 
 const DisplayCart = () => {
     const items = useSelector((state: RootState)=> state.cart.items);
@@ -17,7 +17,7 @@ const DisplayCart = () => {
                     items.length?
                     <div className="flex flex-col gap-2">
                         {items.map((item, index)=>
-                            <CartCart item={item} index={index} loading={loading[item.id]?? false}/>
+                            <CartCard item={item} loading={loading[item.id]?? false} key={index}/>
                         )}
                     </div> :
                     <div className="my-10 text-center"><h1>Your Amazon Cart is empty!</h1></div>
