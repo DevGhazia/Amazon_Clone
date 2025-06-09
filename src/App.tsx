@@ -24,7 +24,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/auth/signin" replace />} />
+      <Route path="/" element={<Navigate to="/app" replace />} />
       <Route path="/auth" element={<AuthLayout/>}>
         <Route path="signin" element={<SignIn/>}/>
         <Route path="signup" element={<SignUp/>}/>
