@@ -7,8 +7,8 @@ import { signInUser } from "../thunks/authThunks";
 import ErrorBox from "./ErrorBox";
 
 const SignIn = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("admin@gmail.com");
+  const [password, setPassword] = useState("admin123");
   const navigate = useNavigate();
 
   const dispatch = useDispatch<AppDispatch>();
