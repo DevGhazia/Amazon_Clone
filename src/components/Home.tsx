@@ -1,6 +1,3 @@
-import { AppDispatch } from "../store";
-import { useDispatch } from "react-redux"
-import { signOutUser } from "../thunks/authThunks";
 import { useEffect, useState } from "react";
 import { ProductsCard } from "./ProductsCard";
 import Carousel from "./Carousel";
@@ -9,7 +6,6 @@ import Banner from "./Banner";
 const cardTitles = ["Pick where you left off", "Keep shopping for", "Continue shopping deals", "More items to consider"];
 
 const Home = () => {
-    const dispatch = useDispatch<AppDispatch>();
     const [width, setWidth] = useState<number>(window.innerWidth);
 
     useEffect(()=>{
