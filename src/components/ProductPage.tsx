@@ -186,7 +186,9 @@ export const ProductPage = () => {
                                 </div>
                             </div>
                             {/* ADD TO CART BUTTON */}
-                            <button className="login_button bg-yellow-300 hover:bg-yellow-400 mb-2 disabled:bg-ultraLightGray" disabled={checkStockAvailability() || IsItemInCart()}>
+                            <button 
+                                className="login_button bg-yellow-300 hover:bg-yellow-400 mb-2 disabled:bg-ultraLightGray" disabled={checkStockAvailability() || IsItemInCart()}
+                                onClick={()=>dispatch(AddToCart({item: singleProduct, quantity: itemCount}))}>
                                 {IsItemInCart()? "Already in Cart": "Add to Cart"}
                             </button>
                             {/* BUY NOW BUTTON */}

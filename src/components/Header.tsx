@@ -9,6 +9,8 @@ import { AppDispatch, RootState } from "../store";
 import { useEffect, useState } from "react";
 import { fetchCategoryList } from "../thunks/productThunks";
 import { FetchCartItems } from "../thunks/cartThunks";
+import { GitHub } from "@mui/icons-material";
+import { signOutUser } from "../thunks/authThunks";
 
 interface HeaderProps{
     username: string | null;
@@ -83,15 +85,28 @@ export const Header: React.FC<HeaderProps> = ({username}) => {
 
                 {/* NAV-RIGHT */}
                 <div className="flex gap-3">
-                    <div className="header_link header_hover">
+                    <div className="group relative header_link header_hover">
                         <span>{`Hello, ${username? username: "Guest"}`}</span>
                         <span>Account & Lists</span>
+                        <div className="hidden absolute p-1 z-[100] bottom-0 right-0 translate-y-full group-hover:block bg-white">
+                            <button onClick={()=>dispatch(signOutUser())} className="text-black py-1 px-2">
+                                <span className="font-normal">Sign Out</span>
+                            </button>
+                        </div>
                     </div>
                     <div className="header_link header_hover">
                         <span>Returns</span>
                         <span>& Orders</span>
                     </div>
-                    
+                    <Link to={'https://github.com/DevGhazia/Amazon_Clone'} target="_blank">
+                        <div className="flex gap-1.5 p-1 header_hover">
+                            <GitHub fontSize="large"/>
+                            <div className="flex flex-col">
+                                <span className="text-xs">View</span>
+                                <span className="text-sm font-bold">Code</span>
+                            </div>
+                        </div>
+                    </Link>
                     <Link to={'cart'}>
                         <div className="flex items-end p-1 header_hover relative">
                             <ShoppingCartOutlinedIcon className="pb-0.5" fontSize="large"/>
@@ -104,17 +119,6 @@ export const Header: React.FC<HeaderProps> = ({username}) => {
 
             {/* SUB NAV */}
             <div className="flex justify-between bg-mediumBlue h-10 px-4">
-                {/* <div className="flex flex-grow overflow-x-hidden p-0.5">
-                    {categoryList &&
-                        Array.from({length: categoryList.length}).map((_, index)=>(
-                            <Link to={`${categoryList[index]}?page=1&sortBy=rating&order=desc`} key={index}>
-                                <div className="header_sublink h-full flex items-center z-50">
-                                    <span>{categoryList[index].charAt(0).toUpperCase() + categoryList[index].slice(1)}</span>
-                                </div>
-                            </Link>
-                        ))
-                    }
-                </div> */}
                 <div className="flex flex-wrap">
                     {categoryList &&
                         Array.from({length: categoryList.length}).map((_, index)=>(

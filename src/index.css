@@ -66,3 +66,20 @@
     font-semibold
     px-3
 }
+
+.scrollbar-hover::-webkit-scrollbar {
+  width: 0px;
+  height: 6px;
+}
+
+.scrollbar-hover:hover::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-hover:hover::-webkit-scrollbar-thumb {
+  @apply
+  bg-someWhatDarkGray
+  rounded-xl
+  cursor-pointer
+}

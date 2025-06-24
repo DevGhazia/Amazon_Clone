@@ -48,7 +48,7 @@ export const cartSlice = createSlice({
             state.loadingById[action.meta.arg.item.id] = true;
         })
         .addCase(AddToCart.fulfilled, (state, action)=>{
-            state.items.push(action.payload); 
+            state.items.unshift(action.payload); 
             state.loadingById[action.meta.arg.item.id] = false;
         })
         .addCase(AddToCart.rejected, (state,action)=>{

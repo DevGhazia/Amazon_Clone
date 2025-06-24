@@ -16,6 +16,7 @@ export default {
         darkGray: "#888c8c",
         lightGray: "#d5d9d9",
         normalGray: "#D4D4D4",
+        someWhatDarkGray: "#888888",
         extraDarkGray: '#565959',
         ultraLightGray: "#E3E6E6",
         ultraLightGrayMax: "#F0F2F2",

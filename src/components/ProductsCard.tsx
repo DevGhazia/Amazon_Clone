@@ -7,13 +7,14 @@ import { Link } from "react-router";
 // import getCloudinaryUrl from "../utils/cloudinary";
 
 interface ProductCardProps{
-    cardTitle: string;
+    cardTitle?: string;
     category: string;
 }
 
 export const ProductsCard = ({cardTitle, category}: ProductCardProps) => {
     const dispatch = useDispatch<AppDispatch>();
-    const productsData = useSelector((state: RootState)=> state.product.categoryProducts[category])
+    const productsData = useSelector((state: RootState)=> state.product.categoryProducts[category]);
+    const quotes = ["More top picks for you", "You might also like", "Explore more", "More items to consider"];
     
     // -----------FETCHING PRODUCTS BY CATEGORY----------
     useEffect(()=>{
@@ -27,7 +28,7 @@ export const ProductsCard = ({cardTitle, category}: ProductCardProps) => {
 
     return (
         <div className="p-5 w-full max-w-[400px] bg-white">
-            <h2 className="mb-5">{cardTitle}</h2>
+            <h2 className="mb-5">{cardTitle? cardTitle: quotes[Math.floor(Math.random()*4)]}</h2>
             {productsData.items?  
                 <div className="grid grid-cols-2 gap-x-2 gap-y-1">
                     {productsData.items.slice(0, 4).map((item)=> (
@@ -51,7 +52,7 @@ export const ProductsCard = ({cardTitle, category}: ProductCardProps) => {
                     <div className="grid grid-cols-2 gap-5 animate-pulse">
                         {Array.from({length: 4}).map((_, index)=>(
                             <div key={index}>
-                                <div className="bg-ultraLightGrayMax w-full h-32"></div>
+                                <div className="bg-ultraLightGrayMax w-full h-36"></div>
                                 <div className="h-4 mt-1 bg-ultraLightGray"></div>
                             </div>
                         ))}
